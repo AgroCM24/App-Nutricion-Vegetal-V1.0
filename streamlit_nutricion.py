@@ -12,6 +12,17 @@ from datetime import datetime
 # Para Google Sheets
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+# Configurar el alcance de Google Sheets/Drive
+scope = ["https://spreadsheets.google.com/feeds",
+         "https://www.googleapis.com/auth/drive"]
+
+# Cargar credenciales desde Streamlit secrets
+creds_dict = json.loads(st.secrets["GCP_CREDENTIALS"])
+creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
+
+# Autorizar y abrir la hoja
+client = gspread.authorize(creds)
+sheet = client.open("EntrenamientoIA").sheet1  # <-- tu hoja
 
 # ============================================
 # CONFIGURACIÓN DE LA PÁGINA
