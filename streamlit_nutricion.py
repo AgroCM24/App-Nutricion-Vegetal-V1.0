@@ -10,8 +10,10 @@ import numpy as np
 from datetime import datetime
 
 # Para Google Sheets
+import json
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+import streamlit as st
 # Configurar el alcance de Google Sheets/Drive
 scope = ["https://spreadsheets.google.com/feeds",
          "https://www.googleapis.com/auth/drive"]
