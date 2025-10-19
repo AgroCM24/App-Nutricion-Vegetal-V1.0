@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "ianutri-475605",
+  "private_key_id": "f032531b39845562d9fd231099d2be0eca17d45d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC8jzCVy8hriCM6\nKmLMYk0CkE1PoqP1Q34/Y+f/RRIKJWJQp6bK7cgDD3LLYoB1IaL0c01qGkhAgVDn\nPq+mb7811ZcI5GcvJcZkv/Zk4Tj9nhpKRRQnEzqgtgzzV73QhDE97rwNsjsesm45\nq7pJZSrRNyQIiY2F7cvTc8vA+AzDqhRN/YnjUviqMmCUkiTflTSEfW84r7vbNpQw\nexQC+/612orZhSk+saXF4f8RAJvM4roax75AqqjdPbR7IjUrnD8dpHhmrv36mlzD\ntJF1xIcG1g9xWzch+RGMO2WavdxP+uScxYwV74kdYNnQ3Hr7jbLnfiQHJCiDpzJp\nTVTGUFjTAgMBAAECggEAIq8YGcXFVPpSuIVJbRz722fdwLNDA39pvpFLAGqdGd6s\nifd8t8ErVFzIGd9Bj8ojJmH7MHQrLCpdTlv6hVvyyR1Dze/thv+k0a15zi6bhBNL\n9LNmNJXV5+/0y+Is2SknwaOjVcWeGFRr8BHFj3CbgqZo62UZ8jO+lWOsbA90kZzq\n5Se4AdULsruspXYpIGsbny8t17d+efQ43Np0Jx64q4LVZygsbOEUK1V5J0ZPyeVt\nXDJ8XCdxGo1NiXVENjxf3lep+u7m/QT8sboBIBFV04+a6Q0JSQUsgDG5Ot/qUf8h\nYuQ8KocpGMnkg4mO2L63eBb8QhOrSFPEsKDBGsdoCQKBgQD57r5QKShwxfwnp8Uz\n08LabCZedEO99Ra1t+eQM3NxzmGEnfRDU9MKz+BKxkhSuwQul7vm+K8AdkxlXYCk\njk6nwIvm9Pt2xLiHNOILxSjXZvsty34MDmMkszGHBXa71uNs2N72P4bAJ+CMTvV2\n3K/ZCqawBBebW8CgHwP4brcTJwKBgQDBIwelvjiZWiYNv9OpMUbqXcPLEqtbHY6O\nEeS4ojfr+QujuBTo8/2GHqODIslLS5AdbrSXdBK8YqTxR2gQl9quWNZj0Qg9gIGI\n9zmVbJnG7CsEHwmmipqLJ4WlJfSkXycnMgR2j9s72MpTNfYAJJwOrkLr0vjmhFxz\nvpDDBzWodQKBgQDtrfEmYj2nIWDuhUmwQ82l0fubD43sc8so/L8mDwfWTqHGcD/+\nVxT3z0BJW88jfd44QOvcdtpV4io8q3LPCtYaCa4B8S/CfsnNKqlc8B4q2jA8GKzB\n4ly+ZfrPoI6Ni4mz1XoTS85lpoaQZ/ZfFvfTu6FQ+lNI1zSUEWrBMui/OQKBgBZu\ntyitG23UZq8aJL92FcKK+X7QwE5o9HHT6jj3vn8OAigV7XfRPxUg4eUNWUwBjs+c\nWCVvOe3fl0DfBltHCANQFjapxMc/8cuyy2Frp8DPFX/5CunpF2IqSP+RlQSyeJ24\n1YPf2Zrt5zIbBmOl3OpnmyZA7t/3Z7WZ4L6GS9kxAoGAbANpqSRqPftR6Ix62KRT\n3/tFwRO+BZrETlbilHowEVtpMmDSrqTbXzt0lkKYs+KmZswowrFk/ff07/ET/VOA\n7T9gODAOTc3q+AK+silNApKt7F4/vxkV0Wl6c4I6anaBrNqedDD+a57beQETUedp\n2bgmGKzVG4z6QRgMAA1Uph8=\n-----END PRIVATE KEY-----\n",
+  "client_email": "nutricionia@ianutri-475605.iam.gserviceaccount.com",
+  "client_id": "102019483567661928202",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/nutricionia%40ianutri-475605.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
