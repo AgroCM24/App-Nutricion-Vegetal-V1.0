@@ -10,21 +10,39 @@ import numpy as np
 from datetime import datetime
 
 # Para Google Sheets
-import json
+import streamlit as st
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-import streamlit as st
+import json
 
+# Definir scopes necesarios
 scope = [
     "https://spreadsheets.google.com/feeds",
     "https://www.googleapis.com/auth/drive"
 ]
 
-# Cargar el JSON desde el secreto
-creds_dict = json.loads(st.secrets["GCP_CREDENTIALS"]["json"])
-# Autorizar cliente de Google Sheets
-client = gspread.authorize(ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope))
-sheet = client.open("EntrenamientoIA").sheet1
+# Cargar credenciales desde secrets
+try:
+    creds_dict = json.loads(st.secrets["GCP_CREDENTIALS"])
+except Exception as e:
+    st.error(f"No se pudo leer GCP_CREDENTIALS: {e}")
+    st.stop()
+
+# Autorizar cliente
+try:
+    creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
+    client = gspread.authorize(creds)
+except Exception as e:
+    st.error(f"No se pudo autorizar gspread: {e}")
+    st.stop()
+
+# Intentar abrir el Sheet
+try:
+    sheet = client.open("EntrenamientoIA").sheet1  # Cambia 'sheet1' si tu pestaña se llama distinto
+    st.success("¡Conexión exitosa a Google Sheets!")
+    st.write(sheet.get_all_values())  # Muestra los datos en la app
+except Exception as e:
+    st.warning(f"No se pudo conectar al Sheet. Verifica nombre y permisos: {e}")
 
 # ============================================
 # CONFIGURACIÓN DE LA PÁGINA
