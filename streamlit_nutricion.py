@@ -20,24 +20,11 @@ scope = [
     "https://www.googleapis.com/auth/drive"
 ]
 
-# Cargar credenciales desde secrets
-creds_dict = st.secrets["GCP_CREDENTIALS"]
+creds_dict = st.secrets["GCP_CREDENTIALS"]  # ya es dict directamente
+creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
+client = gspread.authorize(creds)
 
-# Autorizar cliente
-try:
-    creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
-    client = gspread.authorize(creds)
-except Exception as e:
-    st.error(f"No se pudo autorizar gspread: {e}")
-    st.stop()
-
-# Intentar abrir el Sheet
-try:
-    sheet = client.open("EntrenamientoIA").sheet1
-    st.success("¡Conexión exitosa a Google Sheets!")
-    st.write(sheet.get_all_values())
-except Exception as e:
-    st.warning(f"No se pudo conectar al Sheet. Verifica nombre y permisos: {e}")
+sheet = client.open("EntrenamientoIA").sheet1
 
 # ============================================
 # CONFIGURACIÓN DE LA PÁGINA
