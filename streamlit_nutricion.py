@@ -77,6 +77,7 @@ try:
     client = gspread.authorize(creds)
     sheet = client.open("EntrenamientoIa").sheet1
 except Exception as e:
+    st.warning(" ")
     sheet = None
 
 # ============================================
@@ -440,4 +441,4 @@ if opcion_menu == "Interpretación con IA":
             sheet.append_row(fila)
             st.success("✅ Datos guardados en Google Sheets")
         except Exception as e:
-            
+            st.warning(f" ")
