@@ -75,7 +75,7 @@ try:
     creds = ServiceAccountCredentials.from_json_keyfile_name("credenciales.json", scope)
     client = gspread.authorize(creds)
     sheet = client.open("EntrenamientoIa").sheet1
-    except Exception as e:
+except Exception as e:
     st.warning(" ")
     sheet = None
 
