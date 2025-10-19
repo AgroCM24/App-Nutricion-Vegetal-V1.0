@@ -35,7 +35,6 @@ except Exception as e:
 try:
     sheet = client.open("EntrenamientoIA").sheet1
     st.success("¡Conexión exitosa a Google Sheets!")
-    st.write(sheet.get_all_values())
 except Exception as e:
     st.warning(f"No se pudo conectar al Sheet. Verifica nombre y permisos: {e}")
 
