@@ -77,7 +77,6 @@ try:
     client = gspread.authorize(creds)
     sheet = client.open("EntrenamientoIa").sheet1
 except Exception as e:
-    st.warning("No se pudo conectar a Google Sheets. Los datos no se guardarán automáticamente.")
     sheet = None
 
 # ============================================
@@ -441,4 +440,4 @@ if opcion_menu == "Interpretación con IA":
             sheet.append_row(fila)
             st.success("✅ Datos guardados en Google Sheets")
         except Exception as e:
-            st.warning(f"No se pudieron guardar los datos: {e}")
+            
