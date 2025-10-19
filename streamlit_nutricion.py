@@ -13,7 +13,6 @@ from datetime import datetime
 import streamlit as st
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-import json
 
 # Definir scopes necesarios
 scope = [
@@ -22,11 +21,7 @@ scope = [
 ]
 
 # Cargar credenciales desde secrets
-try:
-    creds_dict = json.loads(st.secrets["GCP_CREDENTIALS"])
-except Exception as e:
-    st.error(f"No se pudo leer GCP_CREDENTIALS: {e}")
-    st.stop()
+creds_dict = st.secrets["GCP_CREDENTIALS"]
 
 # Autorizar cliente
 try:
@@ -38,9 +33,9 @@ except Exception as e:
 
 # Intentar abrir el Sheet
 try:
-    sheet = client.open("EntrenamientoIA").sheet1  # Cambia 'sheet1' si tu pestaña se llama distinto
+    sheet = client.open("EntrenamientoIA").sheet1
     st.success("¡Conexión exitosa a Google Sheets!")
-    st.write(sheet.get_all_values())  # Muestra los datos en la app
+    st.write(sheet.get_all_values())
 except Exception as e:
     st.warning(f"No se pudo conectar al Sheet. Verifica nombre y permisos: {e}")
 
