@@ -14,17 +14,14 @@ import json
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import streamlit as st
-# Configurar el alcance de Google Sheets/Drive
-scope = ["https://spreadsheets.google.com/feeds",
-         "https://www.googleapis.com/auth/drive"]
 
-# Cargar credenciales desde Streamlit secrets
-creds_dict = json.loads(st.secrets["GCP_CREDENTIALS"])
-creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
+scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 
-# Autorizar y abrir la hoja
-client = gspread.authorize(creds)
-sheet = client.open("EntrenamientoIA").sheet1  # <-- tu hoja
+# Cargar el JSON desde el secreto
+creds_dict = json.loads(st.secrets["GCP_CREDENTIALS"]["json"])
+# Autorizar cliente de Google Sheets
+client = gspread.authorize(ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope))
+sheet = client.open("EntrenamientoIA").sheet1
 
 # ============================================
 # CONFIGURACIÓN DE LA PÁGINA
