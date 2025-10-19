@@ -59,7 +59,7 @@ try:
     scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
     creds = ServiceAccountCredentials.from_json_keyfile_name("credenciales.json", scope)
     client = gspread.authorize(creds)
-    sheet = client.open("Nutricion_Vegetal").sheet1
+    sheet = client.open("EntrenamientoIa").sheet1
 except Exception as e:
     st.warning("No se pudo conectar a Google Sheets. Los datos no se guardarán automáticamente.")
     sheet = None
